@@ -1,0 +1,18 @@
+<ion-header color="dark">
+    <ion-toolbar color="dark">
+        <ion-title>
+            Mexico News
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <app-noticias [noticias]="noticias"></app-noticias>
+
+    <ion-infinite-scroll threshold="150px" position="bottom" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Obteniendo mas noticias...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,64 @@
+<!--
+<ion-card color="dark">
+
+    <ion-card-header>
+
+        <ion-card-subtitle>
+            <span class="text-primary">{{ indice + 1 }}</span>
+            <span class="noticia-source-name">{{noticia.source.name}}</span>
+
+            <div class="noticia-more">
+                <ion-button (click)="lanzarMenu()" fill="clear">
+                    <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+                </ion-button>
+            </div>
+
+        </ion-card-subtitle>
+
+        <ion-card-title (click)="abrirNoticia()">{{noticia.title}}</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-img (click)="abrirNoticia()" *ngIf=" noticia.urlToImage " [src]="noticia.urlToImage "></ion-img>
+
+    <ion-card-content>
+        {{noticia.description}}
+    </ion-card-content>
+
+</ion-card>
+-->
+
+<ion-card color="dark" class="animated fadeIn">
+
+    <ion-item color="dark">
+        <span class="text-primary">{{ indice + 1 }}</span>
+        <ion-label>
+            <span class="noticia-source-name">Editorial: {{noticia.source.name}}</span>
+            <p><strong>Autor:</strong> {{noticia.author}}</p>
+        </ion-label>
+
+        <div class="noticia-more">
+            <ion-button (click)="lanzarMenu()" fill="clear">
+                <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+            </ion-button>
+        </div>
+
+    </ion-item>
+
+    <ion-img (click)="abrirNoticia()" *ngIf=" noticia.urlToImage " [src]="noticia.urlToImage"></ion-img>
+
+    <ion-card-header>
+        <ion-card-title (click)="abrirNoticia()">{{noticia.title | slice:0:50}}....</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+        {{noticia.description | slice:0:100}}....
+    </ion-card-content>
+
+    <ion-footer>
+        <ion-toolbar color="dark">
+            <ion-title class="ion-no-margin" slot="end">{{noticia.publishedAt | date}}</ion-title>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-card>
