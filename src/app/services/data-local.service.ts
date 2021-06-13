@@ -17,6 +17,8 @@ export class DataLocalService {
   async presentToast(message: string) {
     const toast = await this.toastApi.create({
       message,
+      position: 'top',
+      color: 'success',
       duration: 2000
     });
     toast.present();

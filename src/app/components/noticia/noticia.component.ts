@@ -66,7 +66,7 @@ export class NoticiaComponent implements OnInit {
       {
         text: 'Compartir',
         icon: 'share-social-outline',
-        cssClass: 'action-dark',
+        cssClass: 'action-light',
         handler: () => {
           this.shapi.share( this.noticia.title, this.noticia.source.name, '', this.noticia.url );
         }
@@ -76,7 +76,6 @@ export class NoticiaComponent implements OnInit {
         text: 'Cancelar',
         icon: 'close',
         role: 'cancel',
-        cssClass: 'action-dark',
         handler: () => {
          
         }
